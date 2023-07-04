@@ -1,0 +1,44 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    margin-left: 12px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.03px;
+    white-space: nowrap;
+    color: var(--text-color);
+}
+
+.username {
+    font-size: 1.4rem;
+    color: var(--text-color-des);
+    letter-spacing: 0.093px;
+}
+
+.check-icon {
+    padding-left: 5px;
+    color: rgb(32, 213, 236);
+    width: 14px;
+}
