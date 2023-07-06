@@ -5,22 +5,39 @@
     --primary: #fe2c55;
     --text-color: #161823;
     --text-color-des: #16182380;
+    --white-color: rgba(255, 255, 255, 1);
 
     // default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%;
+    font-family: 'IBM Plex Sans', TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
 }
+
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'IBM Plex Sans', TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    text-decoration: none;
+    color: var(--text-color);
 }

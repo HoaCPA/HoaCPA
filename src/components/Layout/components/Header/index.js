@@ -2,17 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
+import classNames from 'classnames/bind';
 
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
+import Button from '~/components/Button';
 import AccountItem from '~/components/AccountItem';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
 
+    // Đây là phần để hiển thị kết quả tìm kiếm
     // useEffect(() => {
     //     setSearchResult([1, 2, 3]);
     //     console.log(1);
@@ -99,7 +102,34 @@ function Header() {
                     </div>
                 </Tippy>
 
-                <div className={cx('actions')}> </div>
+                <div className={cx('actions')}>
+                    <Button text>Tải lên</Button>
+                    <Button primary>Đăng nhập</Button>
+                    {/* <Button outline large >Đăng nhập</Button> */}
+                    {/* <Button outline small>
+                        Follow
+                    </Button> */}
+                    {/* <Button rounded>Tải ứng dụng</Button> */}
+
+                    <Menu>
+                        <div className={cx('more-btn')}>
+                            <svg
+                                width="1em"
+                                data-e2e=""
+                                height="1em"
+                                viewBox="0 0 48 48"
+                                fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M24 4C26.2091 4 28 5.79086 28 8C28 10.2091 26.2091 12 24 12C21.7909 12 20 10.2091 20 8C20 5.79086 21.7909 4 24 4ZM24 20C26.2091 20 28 21.7909 28 24C28 26.2091 26.2091 28 24 28C21.7909 28 20 26.2091 20 24C20 21.7909 21.7909 20 24 20ZM24 36C26.2091 36 28 37.7909 28 40C28 42.2091 26.2091 44 24 44C21.7909 44 20 42.2091 20 40C20 37.7909 21.7909 36 24 36Z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </Menu>
+                </div>
             </div>
         </header>
     );
