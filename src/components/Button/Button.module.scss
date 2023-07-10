@@ -8,10 +8,27 @@
     border: 1px solid transparent;
     cursor: pointer;
     font-family: 'IBM Plex Sans', TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+    display: inline-flex;
+    align-items: center;
 
     + .wrapper {
         margin-left: 16px;
     }
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.08);
+        border-radius: 0;
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+.icon {
+    width: 20px;
+    text-align: center;
 }
 
 .primary {

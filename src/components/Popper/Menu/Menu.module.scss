@@ -1,3 +1,16 @@
-.content {
-    width: 224px;
+.menu-lists {
+    width: 227px;
+
+    .menu-item {
+        margin: 0;
+        padding: 10px 12px;
+        width: 100%;
+        font-weight: 600;
+        color: var(--text-color);
+        letter-spacing: 0.1px;
+    }
+}
+
+.menu-popper {
+    padding: 10px 0;
 }
