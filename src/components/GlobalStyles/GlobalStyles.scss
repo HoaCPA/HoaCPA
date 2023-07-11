@@ -10,6 +10,8 @@
     // default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --default-layout-horizontal-space: 22px;
+
 }
 
 * {
@@ -40,4 +42,18 @@ input,
 a[href] {
     text-decoration: none;
     color: var(--text-color);
+}
+
+
+// Tippy
+.tippy-box {
+    font-size: 16px;
+    letter-spacing: 0.03px;
+    background-color: rgba(84, 84, 84, 0.92);
+    color: rgb(255, 255, 255);
+}
+
+.tippy-box[data-placement^=bottom]>.tippy-arrow:before { 
+    top: -8px;
+    color: rgba(84, 84, 84, 0.92);
 }

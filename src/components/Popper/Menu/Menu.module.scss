@@ -3,7 +3,8 @@
 
     .menu-item {
         margin: 0;
-        padding: 10px 12px;
+        height: 42px;
+        padding: 0 12px;
         width: 100%;
         font-weight: 600;
         color: var(--text-color);
@@ -13,4 +14,26 @@
 
 .menu-popper {
     padding: 10px 0;
+}
+
+.header {
+    margin-top: -10px;
+    position: relative;
+    height: 50px;
+}
+
+.back-btn {
+    background-color: transparent;
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.header-title {
+    color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
 }

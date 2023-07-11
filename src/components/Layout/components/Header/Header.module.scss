@@ -10,6 +10,7 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
+    padding: 0 var(--default-layout-horizontal-space);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -129,13 +130,38 @@
     align-items: center;
 }
 
+.action-btn {
+    background-color: transparent;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 10px;
+    height: 36px;
+}
+
+.action-btn:nth-child(2) {
+    margin: 0 0px 0 10px;
+}
+
+
 .more-btn {
     margin-left: 12px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     svg {
         font-size: 24px;
         padding: 2px;
     }
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
 }
