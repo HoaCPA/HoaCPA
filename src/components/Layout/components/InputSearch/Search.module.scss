@@ -1,0 +1,118 @@
+.search {
+    // width: 500px;
+    height: 46px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: 92px;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid transparent;
+    position: relative;
+    caret-color: red;
+
+    input {
+        width: 391px;
+        height: 100%;
+        font-size: 1.5rem;
+        color: #3e3e3e;
+        outline: none;
+        letter-spacing: 0.03px;
+        border-color: transparent;
+        background-color: transparent;
+        padding: 0px 12px 0 16px;
+        font-family: 'IBM Plex Sans', TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+
+        &::placeholder {
+            color: black;
+        }
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        svg {
+            fill: rgba(22, 24, 35, 0.8);
+        }
+    }
+
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.12);
+
+        .search-btn {
+            background-color: #e2e2e2;
+
+            svg {
+                fill: rgba(22, 24, 35, 0.8);
+            }
+        }
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.12);
+    }
+}
+
+.search-result {
+    width: 474px;
+}
+
+.search-title {
+    font-size: 1.4rem;
+    color: var(--text-color-des);
+    padding: 5px 14px;
+}
+
+.clear-loading {
+    padding-right: 12px;
+    position: relative;
+    width: 29px;
+
+    .clear,
+    .loading {
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        color: rgba(22, 34, 35, 0.34);
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.loading {
+    animation: spinner 1.2s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.search-btn {
+    width: 52px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    border-top-right-radius: 91px;
+    border-bottom-right-radius: 92px;
+    padding: 0 12px;
+    position: relative;
+    cursor: pointer;
+
+    svg {
+        fill: rgba(22, 24, 35, 0.34);
+    }
+
+    &::before {
+        content: '';
+        width: 1px;
+        height: 60%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgb(199, 199, 199);
+    }
+}
