@@ -1,16 +1,11 @@
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCoins,
-    faEarthAsia,
-    faSignOut,
-} from '@fortawesome/free-solid-svg-icons';
-import { faCircleQuestion, faKeyboard, faMoon, faUser, } from '@fortawesome/free-regular-svg-icons';
+import { faCoins, faEarthAsia, faSignOut } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faKeyboard, faMoon, faUser } from '@fortawesome/free-regular-svg-icons';
 
 import Tippy from '@tippyjs/react/';
-import 'tippy.js/dist/tippy.css'; 
+import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
-import routeConfig from '~/config/routes';
+import config from '~/config';
 
 import styles from './Header.module.scss';
 import Button from '~/components/Button';
@@ -78,9 +73,9 @@ const USER_MENU = [
         icon: <FontAwesomeIcon icon={faSignOut} />,
         title: 'Đăng xuất',
         to: './logout',
-        separate: true
+        separate: true,
     },
-]
+];
 
 function Header() {
     const currentUser = true;
@@ -93,22 +88,22 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routeConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <LogoTiktok />
                 </Link>
 
                 <InputSearch />
-                
+
                 <div className={cx('actions')}>
                     <Button text>Tải lên</Button>
                     {currentUser ? (
                         <>
-                            <Tippy content="Tin nhắn" placement='bottom'>
+                            <Tippy content="Tin nhắn" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                <UploadIcon />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
-                            <Tippy content="Hộp thư" placement='bottom'>
+                            <Tippy content="Hộp thư" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <BoxMail />
                                 </button>

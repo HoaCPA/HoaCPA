@@ -12,7 +12,7 @@ import { SearchBtn } from '~/components/Icons';
 import { Link } from 'react-router-dom';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
-import * as searchService from '~/apiServices/searchServices';
+import * as searchService from '~/services/searchService';
 const cx = classNames.bind(styles);
 
 function InputSearch() {
@@ -49,16 +49,15 @@ function InputSearch() {
     }, [debounced]);
 
     const handleChange = (e) => {
-        const searchValue = e.target.value
-        if(!searchValue.startsWith(' '))
-            setSearchValue(e.target.value)
-    }
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(' ')) setSearchValue(e.target.value);
+    };
 
     return (
-        // Using a wrapper <div> tag around the reference element solves 
+        // Using a wrapper <div> tag around the reference element solves
         // this by creating a new parentNode context.
         <div>
-            <HeadlessTippy 
+            <HeadlessTippy
                 visible={showResult && searchResult.length > 0}
                 interactive
                 render={(attrs) => (
