@@ -10,7 +10,7 @@ import config from '~/config';
 import styles from './Header.module.scss';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import { BoxMail, LogoTiktok, MoreBtn, UploadIcon } from '~/components/Icons';
+import { BoxMail, Cross, LogoTiktok, MoreBtn, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import InputSearch from '../InputSearch';
 import { Link } from 'react-router-dom';
@@ -28,11 +28,13 @@ const MENU_ITEMS = [
                     code: 'en',
                     title: 'Tiếng Anh',
                     type: 'language',
+                    subItem: 'sub-menu-item',
                 },
                 {
                     code: 'vi',
                     title: 'Tiếng Việt',
                     type: 'language',
+                    subItem: 'sub-menu-item',
                 },
             ],
         },
@@ -95,7 +97,9 @@ function Header() {
                 <InputSearch />
 
                 <div className={cx('actions')}>
-                    <Button text>Tải lên</Button>
+                    <Button text leftIcon={<Cross />}>
+                        Tải lên
+                    </Button>
                     {currentUser ? (
                         <>
                             <Tippy content="Tin nhắn" placement="bottom">
@@ -126,7 +130,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/0084894d9c5e92339f6346def4819ddc~c5_100x100.jpeg?x-expires=1689217200&x-signature=tuTasFoq5sWvZqB9pC8SWYERE0o%3D"
+                                src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/ecda013bbf823982cc6f4882e598734e~c5_100x100.jpeg?x-expires=1689908400&x-signature=lcbozv5HkvC0hWTd%2FM0Ffifz%2F2g%3D"
                             />
                         ) : (
                             <div className={cx('more-btn')}>

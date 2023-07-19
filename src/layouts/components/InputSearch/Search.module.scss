@@ -51,12 +51,25 @@
 
 .search-result {
     width: 474px;
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
 }
 
 .search-title {
     font-size: 1.4rem;
     color: var(--text-color-des);
     padding: 5px 14px;
+}
+
+.search-title-more {
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    line-height: var(--primary-line-height);
+    overflow: hidden;
+    padding: 15px 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .clear-loading {

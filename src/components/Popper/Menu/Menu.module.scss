@@ -13,9 +13,18 @@
         &.separate {
             border-top: 1px solid rgba(22, 24, 35, 0.12);
         }
-    }
 
-    
+        &.sub-menu-item {
+            font-size: 1.4rem;
+            font-weight: 400;
+            height: 40px;
+            padding: 0 24px;
+        }
+
+        &:hover {
+            border-radius: 0;
+        }
+    }
 }
 
 .menu-popper {

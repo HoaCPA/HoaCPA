@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
-import { Cross } from '../Icons';
 import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
@@ -50,7 +49,7 @@ function Button({
 
     return (
         <Comp className={classes} {...props}>
-            {text && <Cross />}
+            {/* {text && <Cross />} */}
 
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>

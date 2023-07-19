@@ -1,0 +1,73 @@
+.wrapper {
+    width: 240px;
+    padding: 20px 0 26px 8px;
+}
+
+.container-item {
+    padding: 16px 8px 24px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(22, 24, 35, 0.12);
+        width: 90%;
+    }
+}
+
+.des-login {
+    font-size: 16px;
+    color: #16182380;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+}
+
+.sidebar-login {
+    width: 100%;
+    margin-top: 20px;
+    height: 48px;
+}
+
+// .img-animated {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+// }
+
+.btn-animated {
+    background-image: url('../../../assets/images/back-animated-gate.png');
+    background-size: contain;
+    height: 52px;
+    border-radius: 5px;
+    width: 96%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-introduce {
+    margin-bottom: 8px;
+    color: #16182380;
+    font-size: 12px;
+    cursor: pointer;
+
+    & span:nth-child(1) {
+        display: inline-block;
+        margin: 5px 6px 0 0;
+    }
+
+    span ~ span {
+        display: inline-block;
+        margin: 5px 6px 0 0;
+    }
+
+    span:hover {
+        text-decoration: underline;
+    }
+}

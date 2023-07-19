@@ -20,10 +20,10 @@ function InputSearch() {
 
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true);
+    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const debounced = useDebounce(searchValue, 600);
+    const debouncedValue = useDebounce(searchValue, 600);
 
     const handleClear = () => {
         setSearchValue('');
@@ -36,22 +36,36 @@ function InputSearch() {
     };
 
     useEffect(() => {
-        if (!debounced.trim()) return;
+        if (!debouncedValue.trim()) return;
 
         const fetchApi = async () => {
             setLoading(true);
-            const result = await searchService.search(debounced);
+            const result = await searchService.search(debouncedValue);
             setSearchResult(result);
             setLoading(false);
         };
 
         fetchApi();
-    }, [debounced]);
+    }, [debouncedValue]);
 
     const handleChange = (e) => {
         const searchValue = e.target.value;
         if (!searchValue.startsWith(' ')) setSearchValue(e.target.value);
     };
+
+    const renderResult = (attrs) => (
+        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+            <PopperWrapper>
+                <h4 className={cx('search-title')}>Tài khoản</h4>
+                {searchResult.map((result) => (
+                    <AccountItem key={result.id} data={result} />
+                ))}
+                <Link to={'/search'} className={cx('search-title-more')}>
+                    Xem tất cả kết quả dành cho " {searchValue} "
+                </Link>
+            </PopperWrapper>
+        </div>
+    );
 
     return (
         // Using a wrapper <div> tag around the reference element solves
@@ -60,19 +74,7 @@ function InputSearch() {
             <HeadlessTippy
                 visible={showResult && searchResult.length > 0}
                 interactive
-                render={(attrs) => (
-                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                        <PopperWrapper>
-                            <h4 className={cx('search-title')}>Tài khoản</h4>
-                            {searchResult.map((result) => (
-                                <AccountItem key={result.id} data={result} />
-                            ))}
-                            <Link to={'/search'} className={cx('search-title')}>
-                                Xem tất cả kết quả dành cho " {searchValue} "
-                            </Link>
-                        </PopperWrapper>
-                    </div>
-                )}
+                render={renderResult}
                 onClickOutside={handleHideResult}
             >
                 <div className={cx('search')}>
@@ -85,7 +87,7 @@ function InputSearch() {
                         onFocus={() => setShowResult(true)}
                     ></input>
                     <div className={cx('clear-loading')}>
-                        {debounced && !loading && (
+                        {debouncedValue && !loading && (
                             <button className={cx('clear')} onClick={handleClear}>
                                 <FontAwesomeIcon icon={faCircleXmark} />
                             </button>

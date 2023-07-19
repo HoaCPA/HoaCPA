@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 function MenuItem({ data, onClick }) {
     const classes = cx('menu-item', {
         separate: data.separate,
+        'sub-menu-item': data.subItem,
     });
     return (
         <Button leftIcon={data.icon} to={data.to} className={classes} onClick={onClick}>
