@@ -130,7 +130,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/ecda013bbf823982cc6f4882e598734e~c5_100x100.jpeg?x-expires=1689908400&x-signature=lcbozv5HkvC0hWTd%2FM0Ffifz%2F2g%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/0084894d9c5e92339f6346def4819ddc~c5_100x100.jpeg?x-expires=1691164800&x-signature=eSb0zVVJNDgFfJURJWqkLyWffeE%3D"
                             />
                         ) : (
                             <div className={cx('more-btn')}>

@@ -27,6 +27,8 @@
     font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 0.03px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--text-color);
 }
